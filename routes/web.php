@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\QRCustomController;
 use Illuminate\Support\Facades\Route;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/qrCode', [QRCustomController::class, 'index'])->name('qrCode');
